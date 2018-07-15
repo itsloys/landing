@@ -26,6 +26,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.email-host-provider-domain.com'
+EMAIL_HOST_USER = 'yourusername@youremail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
+
+ADMINS = [('Louis', EMAIL_HOST_USER)]
+MANAGERS = ADMINS
+
 
 # Application definition
 
@@ -36,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pages'
 ]
 
 MIDDLEWARE = [
@@ -53,7 +64,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
