@@ -7,12 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home</title>
 
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% include 'snippets/css.html'%}
 
         <!-- <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbEjh4u" crossorigin="anonymous">
-
         <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 
     </head>
@@ -20,13 +17,10 @@
         {% block content %}
         {%  endblock %}
 
-        <!-- <script type="https:/ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+        {% include 'snippets/js.html'%}
 
-        <script type="{% static 'js/jquery.min.js' %}"></script>
-
-        <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}">
-
-        <!-- <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"> -->
+        <!-- <script type="https:/ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"> -->
 
     </body>
 </html>
