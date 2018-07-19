@@ -1,3 +1,5 @@
+from django.core.exceptions import ValidationError
+
 from django.db import models
 
 # Create your models here.
@@ -7,6 +9,13 @@ LAYOUT_CHOICES = {
     ('stacked', 'Stacked'),
 }
 
+def layout_validator(value):
+    if value[0] != '#':
+        raise ValidationError("Must start with #")
+    if len(value) == 4 or len(value) == 7:
+        return value
+    raise ValidationError("Incorrect length")
+
 class Page(models.Model):
     title               = models.CharField(max_length=255)
     title_description   = models.TextField(blank=True, null=True)
@@ -15,7 +24,7 @@ class Page(models.Model):
     content             = models.TextField(blank=True, null=True)
     # Layout
     show_nav            = models.BooleanField(default=True)
-    nav_color           = models.CharField(max_length=7, default='#000000')
+    nav_color           = models.CharField(max_length=7, default='#000000', validators=[])
     layout              = models.CharField(max_length=20, choices=LAYOUT_CHOICES, default='standard')
     video_embed         = models.TextField(null=True, blank=True)
 
