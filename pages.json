@@ -11,7 +11,7 @@
         "show_nav": true,
         "nav_color": "#820000",
         "layout": "stacked",
-        "video_embed": ""
+        "video_embed": "<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/TL1ByAIf8Ck\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"
     }
 }
 ]
