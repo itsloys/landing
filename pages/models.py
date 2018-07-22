@@ -28,5 +28,17 @@ class Page(models.Model):
     layout              = models.CharField(max_length=20, choices=LAYOUT_CHOICES, default='standard')
     video_embed         = models.TextField(null=True, blank=True)
 
+    featured            = models.BooleanField(default=False)
+    active              = models.BooleanField(default=True)
+
+    def save(self, *args, **kwargs):
+        if self.featured:
+            qs = Page.objects.filter(featured=True).exclude(pk=self.pk)
+            if qs.exists():
+                qs.update(featured=False)
+                print(*args)
+                print(**kwargs)
+        super(Page, self).save(*args, **kwargs)
+
     def __str__(self):
         return '{}'.format(self.title)
