@@ -1,6 +1,10 @@
 from django.core.exceptions import ValidationError
 
+from django.db.models.signals import pre_save 
+
 from django.db import models
+
+from .utils import unique_slug_generator
 
 # Create your models here.
 
@@ -44,3 +48,9 @@ class Page(models.Model):
 
     def __str__(self):
         return '{}'.format(self.title)
+
+def pre_save_receiver_page_model(sender, instance, *args, **kwargs):
+    if instance.slug == 'page-slug' or instance.slug == '':
+        instance.slug = unique_slug_generator(instance)
+
+pre_save.connect(pre_save_receiver_page_model, sender=Page)
