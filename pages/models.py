@@ -28,6 +28,8 @@ class Page(models.Model):
     layout              = models.CharField(max_length=20, choices=LAYOUT_CHOICES, default='standard')
     video_embed         = models.TextField(null=True, blank=True)
 
+    slug                = models.SlugField(default='page-slug')
+
     featured            = models.BooleanField(default=False)
     active              = models.BooleanField(default=True)
 
