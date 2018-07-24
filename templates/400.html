@@ -1,6 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'error_base.html' %}
 
-{% block content %}
+{% block title %}400 error | {{ block.super }}{% endblock %}
+
+{% block error_title %}
+
 
 <h1>400 error.</h1>
 

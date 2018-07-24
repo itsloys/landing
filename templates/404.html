@@ -1,7 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'error_base.html' %}
 
-{% block content %}
+{% block title %}404 Page not found | {{ block.super }}{% endblock %}
 
-<h1>404 Page not found.</h1>
+{% block error_title %}
+
+<h1>404 Error</h1>
 
 {% endblock %}
+
+{% block error_description %}404 Page not found.{% endblock %}
