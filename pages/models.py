@@ -36,6 +36,7 @@ class Page(models.Model):
 
     featured            = models.BooleanField(default=False)
     active              = models.BooleanField(default=True)
+    leave_capture       = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         if self.featured:
