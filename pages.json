@@ -14,7 +14,8 @@
         "video_embed": "<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/TL1ByAIf8Ck\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>",
         "slug": "page-slug-sxxj",
         "featured": false,
-        "active": true
+        "active": true,
+        "leave_capture": true
     }
 },
 {
@@ -32,7 +33,8 @@
         "video_embed": "<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/TL1ByAIf8Ck\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>",
         "slug": "its-loys",
         "featured": false,
-        "active": true
+        "active": true,
+        "leave_capture": true
     }
 },
 {
@@ -50,7 +52,8 @@
         "video_embed": "<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/TL1ByAIf8Ck\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>",
         "slug": "its-loys-lzqh",
         "featured": true,
-        "active": true
+        "active": true,
+        "leave_capture": true
     }
 }
 ]
