@@ -1,8 +1,8 @@
+.sign-up-email-form {
+    width: 275px !important;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
-
-.sign-up-email-form {
-    width: 275px !important;
 }

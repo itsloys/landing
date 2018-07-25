@@ -53,7 +53,7 @@
         "slug": "its-loys-lzqh",
         "featured": true,
         "active": true,
-        "leave_capture": true
+        "leave_capture": false
     }
 }
 ]
