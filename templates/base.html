@@ -49,7 +49,7 @@
       var doShowMarketing = false;
 
       doShowMarketing = $(".leave-capture").attr('show') == 'true';
-      console.log(doShowMarketing);
+      //console.log(doShowMarketing);
 
       $("body").mouseleave(function(){
         if (!didDismissModal && !doShowMarketing){
@@ -76,7 +76,7 @@
             console.log(data);
             //$(this).fadeOut();
             didDismissModal = true;
-            $marketingModal,modal('hide');
+            $marketingModal.modal('hide');
             this_.parent().html("<p class='lead'>Success! Thanks for joining.</p>");
           },
           error:function(data){
