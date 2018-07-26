@@ -21,22 +21,26 @@ def layout_validator(value):
     raise ValidationError("Incorrect length")
 
 class Page(models.Model):
-    title               = models.CharField(max_length=255)
-    title_description   = models.TextField(blank=True, null=True)
-    title_btn           = models.CharField(max_length=50, default='Join')
-    title_btn_url       = models.CharField(max_length=50, blank=True, null=True)
-    content             = models.TextField(blank=True, null=True)
+    title                   = models.CharField(max_length=255)
+    title_description       = models.TextField(blank=True, null=True)
+    title_btn               = models.CharField(max_length=50, default='Join')
+    title_btn_url           = models.CharField(max_length=50, blank=True, null=True)
+    content                 = models.TextField(blank=True, null=True)
+    
     # Layout
-    show_nav            = models.BooleanField(default=True)
-    nav_color           = models.CharField(max_length=7, default='#000000', validators=[])
-    layout              = models.CharField(max_length=20, choices=LAYOUT_CHOICES, default='standard')
-    video_embed         = models.TextField(null=True, blank=True)
+    jumbtron_text_color     = models.CharField(max_length=7, default='#000000', validators=[layout_validator])
+    jumbtron_bg_color       = models.CharField(max_length=7, default='#eeeeee', validators=[layout_validator])
 
-    slug                = models.SlugField(default='page-slug', blank=True)
+    show_nav                = models.BooleanField(default=True)
+    nav_color               = models.CharField(max_length=7, default='#000000', validators=[layout_validator])
+    layout                  = models.CharField(max_length=20, choices=LAYOUT_CHOICES, default='standard')
+    video_embed             = models.TextField(null=True, blank=True)
 
-    featured            = models.BooleanField(default=False)
-    active              = models.BooleanField(default=True)
-    leave_capture       = models.BooleanField(default=True)
+    slug                    = models.SlugField(default='page-slug', blank=True)
+
+    featured                = models.BooleanField(default=False)
+    active                  = models.BooleanField(default=True)
+    leave_capture           = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         if self.featured:
